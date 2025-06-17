@@ -37,6 +37,7 @@ import "../../tiptap-node/paragraph-node/paragraph-node.scss"
 // --- Tiptap UI ---
 import { HeadingDropdownMenu } from "../../tiptap-ui/heading-dropdown-menu"
 import { ImageUploadButton } from "../../tiptap-ui/image-upload-button"
+import { FileSaveButton } from "../../tiptap-ui/file-save-button"
 import { ListDropdownMenu } from "../../tiptap-ui/list-dropdown-menu"
 import { BlockQuoteButton } from "../../tiptap-ui/blockquote-button"
 import { CodeBlockButton } from "../../tiptap-ui/code-block-button"
@@ -138,6 +139,7 @@ const MainToolbarContent = ({
 
       <ToolbarGroup>
         <ImageUploadButton text="Add" />
+        <FileSaveButton />
       </ToolbarGroup>
 
       <Spacer />
