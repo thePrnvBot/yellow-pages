@@ -22,13 +22,41 @@ export interface FileSaveButtonProps extends ButtonProps {
 }
 
 // --- Functions ---
-function saveFile(editor: Editor | null): string | boolean {
+async function saveFile(editor: Editor | null): Promise<boolean> {
   if (!editor) return false
+
   const content = editor.getHTML()
   const turndownService = new TurndownService()
   const markdownContent = turndownService.turndown(content)
-  console.log("Saved content:", markdownContent)
-  return markdownContent
+
+  const fileName = prompt("Enter a filename (without .md):", "new-page")
+  if (!fileName) return false
+
+  try {
+    const response = await fetch('http://localhost:4000/save', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        markdownContent,
+        fileName
+      })
+    })
+
+    const result = await response.json()
+
+    if (response.ok) {
+      console.log("✅ File saved:", result.filePath)
+      return true
+    } else {
+      console.error("❌ Error saving file:", result.error)
+      return false
+    }
+  } catch (err) {
+    console.error("❌ Network error:", err)
+    return false
+  }
 }
 
 // --- Component ---
