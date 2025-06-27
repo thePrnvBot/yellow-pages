@@ -87,6 +87,12 @@ const MainToolbarContent = ({
 }) => {
   return (
     <>
+      <ToolbarGroup>
+        <Button data-style="ghost" onClick={() => window.location.href = "/"}>
+          <span className="tiptap-button-icon">🏠</span>
+          Back
+        </Button>
+      </ToolbarGroup>
       <Spacer />
 
       <ToolbarGroup>
