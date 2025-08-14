@@ -31,3 +31,13 @@ cd yellow-pages
 ```
 
 Note: Run the server.ts separately from the docusaurus build to make sure the File Save Functionality works.
+
+### Images
+## Landing Page
+<img width="2541" height="1039" alt="image" src="https://github.com/user-attachments/assets/d7ee5ec2-3cf5-4f80-9e6d-d69542ee4d0d" />
+
+## Frontpage
+<img width="2558" height="1037" alt="image" src="https://github.com/user-attachments/assets/d77f530e-6a89-4ea1-905b-ec5b1c8c6374" />
+
+## Editor
+<img width="2559" height="765" alt="image" src="https://github.com/user-attachments/assets/366ed7c2-8153-404b-983d-5e23d02d4318" />
